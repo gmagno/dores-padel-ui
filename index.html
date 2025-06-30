@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dores Padel - Court Availability</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Dores Padel - Court Availability</h1>
+  </header>
+
+  <main>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="status-indicator available"></div>
+        <span>Available</span>
+      </div>
+      <div class="legend-item">
+        <div class="status-indicator reserved"></div>
+        <span>Reserved</span>
+      </div>
+    </div>
+
+    <div id="all-days-container">
+      <div class="loading">Loading court data...</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Dores Padel Court Booking System</p>
+  </footer>
+
+  <!-- Include the JSON data directly in the HTML -->
+  <script id="court-data" type="application/json">
+{
+  "2025-06-29": {
+    "courts": [
+      {
+        "name": "Padel Quadra 1",
+        "fullName": "Padel Quadra 1 - Centro Esportivo   Sede Campestre",
+        "timeSlots": [
+          {
+            "time": "07:00 - 08:29",
+            "status": "Livre",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "08:30 - 09:59",
+            "status": "Reservado",
+            "bookingId": "112422",
+            "bookingUrl": null
+          },
+          {
+            "time": "10:00 - 11:29",
+            "status": "Reservado",
+            "bookingId": "112127",
+            "bookingUrl": null
+          },
+          {
+            "time": "11:30 - 12:59",
+            "status": "Livre",
+            "bookingId": "112635",
+            "bookingUrl": null
+          },
+          {
+            "time": "13:00 - 14:29",
+            "status": "Reservado",
+            "bookingId": "112935",
+            "bookingUrl": null
+          },
+          {
+            "time": "14:30 - 15:59",
+            "status": "Reservado",
+            "bookingId": "112711",
+            "bookingUrl": null
+          },
+          {
+            "time": "16:00 - 17:29",
+            "status": "Reservado",
+            "bookingId": "112342",
+            "bookingUrl": null
+          },
+          {
+            "time": "17:30 - 18:59",
+            "status": "Reservado",
+            "bookingId": "112358",
+            "bookingUrl": null
+          },
+          {
+            "time": "19:00 - 20:29",
+            "status": "Reservado",
+            "bookingId": "112577",
+            "bookingUrl": null
+          },
+          {
+            "time": "20:30 - 21:59",
+            "status": "Reservado",
+            "bookingId": "112700",
+            "bookingUrl": null
+          },
+          {
+            "time": "22:00 - 23:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Padel Quadra 2",
+        "fullName": "Padel Quadra 2 - Centro Esportivo   Sede Campestre",
+        "timeSlots": [
+          {
+            "time": "07:00 - 08:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "08:30 - 09:59",
+            "status": "Reservado",
+            "bookingId": "112476",
+            "bookingUrl": null
+          },
+          {
+            "time": "10:00 - 11:29",
+            "status": "Reservado",
+            "bookingId": "112407",
+            "bookingUrl": null
+          },
+          {
+            "time": "11:30 - 12:59",
+            "status": "Reservado",
+            "bookingId": "112943",
+            "bookingUrl": null
+          },
+          {
+            "time": "13:00 - 14:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "14:30 - 15:59",
+            "status": "Reservado",
+            "bookingId": "112710",
+            "bookingUrl": null
+          },
+          {
+            "time": "16:00 - 17:29",
+            "status": "Reservado",
+            "bookingId": "111339",
+            "bookingUrl": null
+          },
+          {
+            "time": "17:30 - 18:59",
+            "status": "Reservado",
+            "bookingId": "111011",
+            "bookingUrl": null
+          },
+          {
+            "time": "19:00 - 20:29",
+            "status": "Reservado",
+            "bookingId": "112486",
+            "bookingUrl": null
+          },
+          {
+            "time": "20:30 - 21:59",
+            "status": "Reservado",
+            "bookingId": "112861",
+            "bookingUrl": null
+          },
+          {
+            "time": "22:00 - 23:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Padel Quadra 3",
+        "fullName": "Padel Quadra 3 - Centro Esportivo   Sede Campestre",
+        "timeSlots": [
+          {
+            "time": "07:00 - 08:29",
+            "status": "Reservado",
+            "bookingId": "112673",
+            "bookingUrl": null
+          },
+          {
+            "time": "08:30 - 09:59",
+            "status": "Reservado",
+            "bookingId": "112551",
+            "bookingUrl": null
+          },
+          {
+            "time": "10:00 - 11:29",
+            "status": "Reservado",
+            "bookingId": "112367",
+            "bookingUrl": null
+          },
+          {
+            "time": "11:30 - 12:59",
+            "status": "Reservado",
+            "bookingId": "112842",
+            "bookingUrl": null
+          },
+          {
+            "time": "13:00 - 14:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "14:30 - 15:59",
+            "status": "Reservado",
+            "bookingId": "112540",
+            "bookingUrl": null
+          },
+          {
+            "time": "16:00 - 17:29",
+            "status": "Reservado",
+            "bookingId": "112213",
+            "bookingUrl": null
+          },
+          {
+            "time": "17:30 - 18:59",
+            "status": "Reservado",
+            "bookingId": "112354",
+            "bookingUrl": null
+          },
+          {
+            "time": "19:00 - 20:29",
+            "status": "Reservado",
+            "bookingId": "112627",
+            "bookingUrl": null
+          },
+          {
+            "time": "20:30 - 21:59",
+            "status": "Reservado",
+            "bookingId": "112938",
+            "bookingUrl": null
+          },
+          {
+            "time": "22:00 - 23:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Padel Quadra 4",
+        "fullName": "Padel Quadra 4 - Centro Esportivo   Sede Campestre",
+        "timeSlots": [
+          {
+            "time": "07:00 - 08:29",
+            "status": "Reservado",
+            "bookingId": "112936",
+            "bookingUrl": null
+          },
+          {
+            "time": "08:30 - 09:59",
+            "status": "Reservado",
+            "bookingId": "112578",
+            "bookingUrl": null
+          },
+          {
+            "time": "10:00 - 11:29",
+            "status": "Reservado",
+            "bookingId": "112683",
+            "bookingUrl": null
+          },
+          {
+            "time": "11:30 - 12:59",
+            "status": "Reservado",
+            "bookingId": "112643",
+            "bookingUrl": null
+          },
+          {
+            "time": "13:00 - 14:29",
+            "status": "Reservado",
+            "bookingId": "112849",
+            "bookingUrl": null
+          },
+          {
+            "time": "14:30 - 15:58",
+            "status": "Reservado",
+            "bookingId": "112446",
+            "bookingUrl": null
+          },
+          {
+            "time": "16:00 - 17:29",
+            "status": "Reservado",
+            "bookingId": "112395",
+            "bookingUrl": null
+          },
+          {
+            "time": "17:30 - 18:59",
+            "status": "Reservado",
+            "bookingId": "110638",
+            "bookingUrl": null
+          },
+          {
+            "time": "19:00 - 20:29",
+            "status": "Reservado",
+            "bookingId": "112607",
+            "bookingUrl": null
+          },
+          {
+            "time": "20:30 - 21:59",
+            "status": "Reservado",
+            "bookingId": "112929",
+            "bookingUrl": null
+          },
+          {
+            "time": "22:00 - 23:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Padel Quadra 5",
+        "fullName": "Padel Quadra 5 - Centro Esportivo   Sede Campestre",
+        "timeSlots": [
+          {
+            "time": "07:00 - 08:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "08:30 - 09:59",
+            "status": "Reservado",
+            "bookingId": "112505",
+            "bookingUrl": null
+          },
+          {
+            "time": "10:00 - 11:29",
+            "status": "Reservado",
+            "bookingId": "112353",
+            "bookingUrl": null
+          },
+          {
+            "time": "11:30 - 12:59",
+            "status": "Reservado",
+            "bookingId": "112785",
+            "bookingUrl": null
+          },
+          {
+            "time": "13:00 - 14:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "14:30 - 15:59",
+            "status": "Reservado",
+            "bookingId": "112557",
+            "bookingUrl": null
+          },
+          {
+            "time": "16:00 - 17:29",
+            "status": "Reservado",
+            "bookingId": "112442",
+            "bookingUrl": null
+          },
+          {
+            "time": "17:30 - 18:59",
+            "status": "Reservado",
+            "bookingId": "111959",
+            "bookingUrl": null
+          },
+          {
+            "time": "19:00 - 20:29",
+            "status": "Reservado",
+            "bookingId": "112419",
+            "bookingUrl": null
+          },
+          {
+            "time": "20:30 - 21:59",
+            "status": "Reservado",
+            "bookingId": "112992",
+            "bookingUrl": null
+          },
+          {
+            "time": "22:00 - 23:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Padel Quadra 6",
+        "fullName": "Padel Quadra 6 - Centro Esportivo   Sede Campestre",
+        "timeSlots": [
+          {
+            "time": "07:00 - 08:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "08:30 - 09:59",
+            "status": "Reservado",
+            "bookingId": "112548",
+            "bookingUrl": null
+          },
+          {
+            "time": "10:00 - 11:29",
+            "status": "Reservado",
+            "bookingId": "112469",
+            "bookingUrl": null
+          },
+          {
+            "time": "11:30 - 12:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "13:00 - 14:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "14:30 - 15:59",
+            "status": "Reservado",
+            "bookingId": "112708",
+            "bookingUrl": null
+          },
+          {
+            "time": "16:00 - 17:29",
+            "status": "Reservado",
+            "bookingId": "112473",
+            "bookingUrl": null
+          },
+          {
+            "time": "17:30 - 18:59",
+            "status": "Reservado",
+            "bookingId": "112360",
+            "bookingUrl": null
+          },
+          {
+            "time": "19:00 - 20:29",
+            "status": "Reservado",
+            "bookingId": "112632",
+            "bookingUrl": null
+          },
+          {
+            "time": "20:30 - 21:59",
+            "status": "Reservado",
+            "bookingId": "112946",
+            "bookingUrl": null
+          },
+          {
+            "time": "22:00 - 23:29",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Padel Quadra A.",
+        "fullName": "Padel Quadra A.- Coberto   Sede Campestre",
+        "timeSlots": [
+          {
+            "time": "07:00 - 07:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "08:00 - 08:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "09:00 - 09:59",
+            "status": "Reservado",
+            "bookingId": "112934",
+            "bookingUrl": null
+          },
+          {
+            "time": "10:00 - 10:59",
+            "status": "Reservado",
+            "bookingId": "112752",
+            "bookingUrl": null
+          },
+          {
+            "time": "11:00 - 11:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "12:00 - 12:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "13:00 - 13:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "14:00 - 14:59",
+            "status": "Reservado",
+            "bookingId": "112850",
+            "bookingUrl": null
+          },
+          {
+            "time": "15:00 - 15:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "16:00 - 16:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "17:00 - 17:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "18:00 - 18:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "19:00 - 19:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "20:00 - 20:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "21:00 - 21:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "22:00 - 22:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Padel Quadra B",
+        "fullName": "Padel Quadra B - Coberto   Sede Campestre",
+        "timeSlots": [
+          {
+            "time": "07:00 - 07:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "08:00 - 08:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "09:00 - 09:59",
+            "status": "Reservado",
+            "bookingId": "112905",
+            "bookingUrl": null
+          },
+          {
+            "time": "10:00 - 10:59",
+            "status": "Reservado",
+            "bookingId": "112917",
+            "bookingUrl": null
+          },
+          {
+            "time": "11:00 - 11:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "12:00 - 12:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "13:00 - 13:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "14:00 - 14:59",
+            "status": "Reservado",
+            "bookingId": "112882",
+            "bookingUrl": null
+          },
+          {
+            "time": "15:00 - 15:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "16:00 - 16:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "17:00 - 17:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "18:00 - 18:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "19:00 - 19:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "20:00 - 20:59",
+            "status": "Livre",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "21:00 - 21:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          },
+          {
+            "time": "22:00 - 22:59",
+            "status": "Reservado",
+            "bookingId": null,
+            "bookingUrl": null
+          }
+        ]
+      }
+    ]
+  }
+
+}
+    </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

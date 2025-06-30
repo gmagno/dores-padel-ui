@@ -1,0 +1,279 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 1400px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Legend Styles */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.available {
+    background-color: #2ecc71;
+}
+
+.reserved {
+    background-color: #e74c3c;
+}
+
+/* All Days Container Styles */
+#all-days-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
+.day-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.day-header {
+    background-color: #34495e;
+    color: white;
+    padding: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Matrix Layout Styles */
+.matrix-container {
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.court-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.court-matrix th, 
+.court-matrix td {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.court-matrix th.time-header {
+    background-color: #f8f9fa;
+    min-width: 120px;
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.court-matrix th.court-header {
+    background-color: #4a6583;
+    color: white;
+    padding: 0.75rem 0.5rem;
+    font-weight: bold;
+    min-width: 50px;
+}
+
+.court-matrix th.court-header.covered-court {
+    background-color: #2c3e50;
+}
+
+.court-matrix td.time-header {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+    color: #34495e;
+}
+
+.court-matrix td.court-cell {
+    width: 50px;
+    height: 40px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.court-matrix td.court-cell:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.court-matrix td.available {
+    background-color: #2ecc71;
+    cursor: pointer;
+}
+
+.court-matrix td.reserved {
+    background-color: #e74c3c;
+}
+
+.court-matrix td.no-data {
+    background-color: #f8f9fa;
+}
+
+.court-matrix td.court-cell.covered-court {
+    border-left: 2px solid #2c3e50;
+    border-right: 2px solid #2c3e50;
+}
+
+/* Add zebra striping for better readability */
+.court-matrix tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Legacy Styles (keeping for reference) */
+.courts-for-day {
+    display: none; /* Hide the old layout */
+}
+
+.court {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+}
+
+.court-header {
+    background-color: #4a6583;
+    color: white;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.5rem;
+    padding: 0.75rem;
+}
+
+.time-slot {
+    border-radius: 4px;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+}
+
+.time-slot:hover {
+    transform: scale(1.05);
+}
+
+.time-slot.available {
+    background-color: #2ecc71;
+    color: white;
+    cursor: pointer;
+}
+
+.time-slot.reserved {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.time-slot .time {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .time-slots {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+    
+    .court-matrix th.time-header,
+    .court-matrix td.time-header {
+        min-width: 100px;
+        font-size: 0.8rem;
+    }
+    
+    .court-matrix th.court-header {
+        min-width: 40px;
+        font-size: 0.8rem;
+    }
+    
+    .court-matrix td.court-cell {
+        width: 40px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-slots {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    
+    .court-matrix th.time-header,
+    .court-matrix td.time-header {
+        min-width: 80px;
+        font-size: 0.7rem;
+    }
+    
+    .court-matrix th.court-header {
+        min-width: 30px;
+        font-size: 0.7rem;
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .court-matrix td.court-cell {
+        width: 30px;
+        height: 30px;
+    }
+}
